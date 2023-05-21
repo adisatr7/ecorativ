@@ -7,7 +7,12 @@ import Checkbox from "../components/Checkbox"
 import WideButton from "../components/WideButton"
 
 
-export default function Register() {
+type RegisterProps = {
+  navigation: any
+}
+
+
+export default function Register({ navigation }: RegisterProps) {
   const [statusBarHeight, setStatusBarHeight] = useState(StatusBar.currentHeight)
 
   const [email, setEmail] = useState("")
@@ -28,7 +33,7 @@ export default function Register() {
         <View className="w-screen h-screen px-[24px]">
 
           {/* Login header label */}
-          <Text className="font-heading text-heading font-bold mb-[18px]">Register</Text>
+          <Text className="text-heading font-bold mb-[18px]">Register</Text>
 
           {/* Forms */}
           <Entry label="Full name" placeholder="Enter your full name" onChange={(value: string) => setEmail(value)}/>
@@ -43,7 +48,7 @@ export default function Register() {
           {/* Footer */}
           <View className="flex-row justify-center mt-[24px]">
             <Text className="text-caption">Already have an account? </Text>
-            <TouchableOpacity activeOpacity={0.6} >
+            <TouchableOpacity activeOpacity={0.6} onPress={() => navigation.navigate("Login")} >
               <Text className="text-caption font-bold text-primary">Log in</Text>
             </TouchableOpacity>
           </View>

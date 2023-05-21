@@ -7,7 +7,7 @@ type WideButtonProps = {
   onPress: () => void
 }
 
-const WideButton: React.FC<WideButtonProps> = ({ label, onPress }) => {
+export default function WideButton({ label, onPress }: WideButtonProps) {
 
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={onPress} className="w-full py-[12px] rounded-[10px] bg-primary">
@@ -15,5 +15,3 @@ const WideButton: React.FC<WideButtonProps> = ({ label, onPress }) => {
     </TouchableOpacity>
   )
 }
-
-export default WideButton

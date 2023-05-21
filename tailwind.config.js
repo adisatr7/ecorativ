@@ -14,14 +14,7 @@ module.exports = {
         subheading: "18px",
         body: "16px",
         caption: "14px"
-      },
-
-      fontFamily: {
-        heading: "Poppins",
-        subheading: "Poppins",
-        body: "Open Sans",
-        caption: "Open Sans"
-      }      
+      }
     },
   },
   plugins: [],

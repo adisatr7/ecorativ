@@ -10,26 +10,26 @@ type EntryProps = {
   onChange: (value: any) => void
 }
 
-const Entry: React.FC<EntryProps> = ({ label, placeholder, type="default", isPassword=false, onChange }) => {
+export default function Entry({ label, placeholder, type="default", isPassword=false, onChange }: EntryProps) {
 
   const [isHidden, setIsHidden] = useState(isPassword)
 
   return (
     <View>
-      <Text className="font-body text-body mb-[8px]">{label}</Text>
+      <Text className="text-body mb-[8px]">{label}</Text>
       <View className="border-2 border-gray-400 rounded-md px-[18px] py-[8px] mb-[12px] flex-row justify-between">
         <TextInput 
           placeholder={placeholder}
           onChange={onChange}
           keyboardType={type}
           secureTextEntry={isHidden}
-          className="w-[82%]"
+          className="flex-auto h-full"
         />
 
         {/* Show password button */}
         { !isPassword? null : (
           <TouchableOpacity className="w-auto items-center justify-center" onPress={() => setIsHidden(!isHidden)}>
-            <Text className="font-body text-body text-gray-400">Show</Text>
+            <Text className="text-body text-gray-400">Show</Text>
           </TouchableOpacity>
         )}
 
@@ -37,5 +37,3 @@ const Entry: React.FC<EntryProps> = ({ label, placeholder, type="default", isPas
     </View>
   )
 }
-
-export default Entry

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { View, Text, TextInput, Pressable } from "react-native"
+import { View, Text, TextInput, Pressable, Image } from "react-native"
 
 
 type CheckboxProps = {
@@ -7,7 +7,7 @@ type CheckboxProps = {
   onChange: (status: boolean) => void
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ label, onChange }) => {
+export default function Checkbox({ label, onChange }: CheckboxProps) {
 
   const [isChecked, setIsChecked] = useState(false)
 
@@ -25,15 +25,13 @@ const Checkbox: React.FC<CheckboxProps> = ({ label, onChange }) => {
           border-2 
           border-gray-400 
           rounded-md 
-          mr-[12px] 
+          mr-[10px] 
           items-center 
           justify-center"
         onPress={toggleHandler}>
-        {isChecked && <View className="w-[10px] h-[10px] bg-primary rounded-[3px]"></View>}
+        {isChecked && <Image className="w-fit h-fit" source={require("../assets/icon-check.png")}/>}
       </Pressable>
       <Text onPress={toggleHandler} >{label}</Text>
     </View>
   )
 }
-
-export default Checkbox

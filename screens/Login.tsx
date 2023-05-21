@@ -7,7 +7,11 @@ import Checkbox from "../components/Checkbox"
 import WideButton from "../components/WideButton"
 
 
-export default function Login({ navigation }) {
+type LoginProps = {
+  navigation: any
+}
+
+export default function Login({ navigation }: LoginProps) {
   const [statusBarHeight, setStatusBarHeight] = useState(StatusBar.currentHeight)
 
   const [email, setEmail] = useState("")
@@ -20,15 +24,15 @@ export default function Login({ navigation }) {
       <KeyboardAwareScrollView>
 
         {/* Header Illustration */}
-        <View className="w-screen h-[35%] flex-col-reverse">
-          <Image source={require("../assets/login-bg.png")} resizeMode="contain" resizeMethod="resize" className="h-[150%] w-full bottom-0"/>
-        </View >
+        <View className="w-screen h-[40%] flex-col-reverse">
+          <Image source={require("../assets/login-bg.png")} resizeMode="contain" resizeMethod="resize" className="h-[150%] w-full bottom-8"/>
+        </View>
 
         {/* Main container */}
         <View className="w-screen h-screen px-[24px]">
 
           {/* Login header label */}
-          <Text className="font-heading text-heading font-bold mb-[18px]">Login</Text>
+          <Text className="text-heading font-bold mb-[18px]">Login</Text>
 
           {/* Forms */}
           <Entry label="Email" placeholder="Enter your email" onChange={(value: string) => setEmail(value)}/>
@@ -41,7 +45,7 @@ export default function Login({ navigation }) {
           </View>
 
           {/* Login button */}
-          <WideButton label="Login" onPress={() => console.log("Login button pressed")}/>
+          <WideButton label="Login" onPress={() => navigation.replace("Main")}/>
 
           {/* Footer */}
           <View className="flex-row justify-center mt-[24px]">
@@ -50,7 +54,7 @@ export default function Login({ navigation }) {
               <Text className="text-caption font-bold text-primary">Sign up</Text>
             </TouchableOpacity>
           </View>
-          
+
         </View>
       </KeyboardAwareScrollView>
     </View>
