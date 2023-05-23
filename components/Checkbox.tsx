@@ -20,7 +20,7 @@ export default function Checkbox({ label, onChange }: CheckboxProps) {
     <View className="flex-row flex">
       <Pressable 
         className="
-          w-[20px] 
+          w-[20px]
           h-[20px] 
           border-2 
           border-gray-400 

@@ -7,6 +7,7 @@ module.exports = {
         primary: "#9539FE",
         secondary: "#407BFF",
         brown: "#FD8D74",
+        inactive: "#D9BCF7"
       },
 
       fontSize: {

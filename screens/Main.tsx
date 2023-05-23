@@ -13,7 +13,7 @@ const Tab = createBottomTabNavigator()
 export default function Main() {
 
   const iconStyle = "w-[24px] h-[24px]"
-  const textStyle = "text-[12px] text-primary"
+  const textStyle = "text-[12px] text-primary my-[2px]"
 
   return (
     <Tab.Navigator 
@@ -23,7 +23,12 @@ export default function Main() {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: "#9539FE", 
-        tabBarInactiveTintColor: "#D9BCF7" 
+        tabBarInactiveTintColor: "#D9BCF7",
+        tabBarBackground: () => {
+          return (
+            <View className="bg-white h-screen bottom-2"/>
+          )
+        }
       }}>
 
       {/* Home */}
