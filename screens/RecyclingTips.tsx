@@ -1,11 +1,20 @@
-import { FlatList, Image, Linking, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
+import { Alert, FlatList, Image, Linking, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import { tips } from "../data"
 
 
 export default function RecyclingTips({ navigation }: any) {
+
+  const handleButton = (redirectUrl: string) => {
+    Alert.alert("Create a Post", "Would you like to share what you'd just watched?", [
+      {text: "Yes", onPress: () => navigation.navigate("NewPost")},
+      {text: "No"}
+    ])
+    Linking.openURL(redirectUrl)
+  }
+
   return (
     <SafeAreaView className="w-full h-full">
-      <View>
+      <View className="mt-[20px]">
 
         {/* Header Container */}
         <View className="flex-row justify-between items-center p-[24px]">
@@ -29,7 +38,7 @@ export default function RecyclingTips({ navigation }: any) {
 
             <View className="flex-[10]">
               <Text className="text-caption" numberOfLines={3} >{tip.title}</Text>
-              <TouchableOpacity activeOpacity={0.6} onPress={() => Linking.openURL(tip.redirectUrl)}>
+              <TouchableOpacity activeOpacity={0.6} onPress={() => handleButton(tip.redirectUrl)}>
                 <Text className="text-primary font-bold mt-[4px]">Open in Browser</Text>
               </TouchableOpacity>
             </View>

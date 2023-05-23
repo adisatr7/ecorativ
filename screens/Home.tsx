@@ -7,9 +7,9 @@ export default function Home({ navigation }: any) {
 
   return (
     <SafeAreaView className="bg-white w-screen h-fit">
-      <StatusBar translucent backgroundColor="rgba(0,0,0,0)" barStyle="dark-content"/>
+      <StatusBar translucent backgroundColor="white" barStyle="dark-content"/>
       <View className={`w-screen h-[${StatusBar.currentHeight}px]`}/>
-      <ScrollView className="px-[20px] pt-[28px]">
+      <ScrollView className="px-[20px] pt-[48px]">
 
         {/* Header Container */}
         <View className="rounded-full flex-row">
@@ -43,7 +43,7 @@ export default function Home({ navigation }: any) {
           source={require("../assets/mockup-percentage.png")} 
           resizeMode="contain"
           className="
-            w-full h-[140px] mt-[20px]
+            w-full h-[140px] mt-[12px]
           "/>
         
         {/* Posts */}

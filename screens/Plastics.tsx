@@ -46,7 +46,7 @@ export default function Plastics({ navigation }: any) {
 
   return (
     <SafeAreaView className="w-full h-full">
-      <View>
+      <View className="mt-[20px]">
 
         {/* Header Container */}
         <View className="flex-row justify-between items-center p-[24px]">

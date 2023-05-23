@@ -1,11 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import Main from "./screens/Main"
-import Login from "./screens/Login";
-import Register from "./screens/Register";
-import Cam from "./screens/Cam";
-import RecyclingTips from "./screens/RecyclingTips";
-import Plastics from "./screens/Plastics";
+import Login from "./screens/Login"
+import Register from "./screens/Register"
+import Cam from "./screens/Cam"
+import RecyclingTips from "./screens/RecyclingTips"
+import Plastics from "./screens/Plastics"
+import NewPost from "./screens/NewPost"
 
 
 const Stack = createStackNavigator()
@@ -20,8 +21,9 @@ export default function App() {
         <Stack.Screen name="Camera" component={Cam}/>
         <Stack.Screen name="Tips" component={RecyclingTips}/>
         <Stack.Screen name="Plastics" component={Plastics}/>
+        <Stack.Screen name="NewPost" component={NewPost}/>
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
