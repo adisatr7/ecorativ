@@ -9,7 +9,7 @@ export default function Activity() {
   return (
     <SafeAreaView className="bg-white w-screen h-screen pt-[28px]">
     <StatusBar backgroundColor="rgba(0,0,0,0)" barStyle="dark-content"/>
-      <ScrollView className="h-[1000px] px-[20px]">
+      <ScrollView className="px-[20px]">
 
         {/* Mockup: Rainbow Diagram */}
         <Text className="font-bold text-subheading">Diagram</Text>
@@ -53,6 +53,7 @@ export default function Activity() {
           </TouchableOpacity>
         </View>
 
+        <View className="m-[45px]"/>
       </ScrollView>
     </SafeAreaView>
   )

@@ -1,6 +1,8 @@
 import { useFocusEffect } from "@react-navigation/native"
 import { useCallback, useState } from "react"
-import { View, Text, SafeAreaView, Image, TouchableOpacity, StatusBar, ScrollView } from "react-native"
+import { View, Text, SafeAreaView, Image, TouchableOpacity, StatusBar, ScrollView, FlatList } from "react-native"
+import Post from "../components/Post"
+import posts from "../data"
 
 
 export default function Home({ navigation }: any) {
@@ -16,9 +18,10 @@ export default function Home({ navigation }: any) {
   // })
 
   return (
-    <SafeAreaView className="bg-white w-screen h-screen pt-[48px]">
+    <SafeAreaView className="bg-white w-screen h-fit">
       <StatusBar translucent backgroundColor="rgba(0,0,0,0)" barStyle="dark-content"/>
-      <ScrollView className="h-[1000px] px-[20px]">
+      <View className={`w-screen h-[${StatusBar.currentHeight}px]`}/>
+      <ScrollView className="px-[20px] pt-[28px]">
 
         {/* Header Container */}
         <View className="rounded-full flex-row">
@@ -57,9 +60,12 @@ export default function Home({ navigation }: any) {
         
         {/* Posts */}
         <Text className="font-bold text-subheading mt-[24px] mb-[16px]">Popular Posts</Text>
-        {/* TODO: Continue */}
-        <Image source={require("../assets/mockup-post-1.png")} resizeMode="contain" className="w-full h-[300px]"/>
 
+        { posts.map((post, index) => (
+          <Post {...post} key={index}/>
+        ))}
+
+      <View className="m-[35px]"/>
       </ScrollView>
     </SafeAreaView>
   )

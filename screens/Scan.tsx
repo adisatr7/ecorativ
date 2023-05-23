@@ -8,4 +8,8 @@ export default function Scan({ navigation }: any) {
     navigation.replace("Camera")
     return () => {}
   }, [])
+
+  return (
+    <View/>
+  )
 }
