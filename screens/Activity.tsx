@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, StatusBar, Image, ScrollView, TouchableOpacity } from "react-native"
 
 
-export default function Activity() {
+export default function Activity({ navigation }: any) {
   const activityTextStyle = "mt-[12px] ml-[12px] mb-[4px] text-white"
   const activityImageStyle = "w-full h-[60%]"
   const activeOpacity = 0.85
@@ -32,7 +32,7 @@ export default function Activity() {
           </TouchableOpacity>
 
           {/* Plastics */}
-          <TouchableOpacity activeOpacity={activeOpacity} className="bg-[#407BFF] w-[150px] h-[140px] rounded-[12px]">
+          <TouchableOpacity onPress={() => navigation.navigate("Plastics")} activeOpacity={activeOpacity} className="bg-[#407BFF] w-[150px] h-[140px] rounded-[12px]">
             <Text className={activityTextStyle}>Plastics</Text>
             <Image source={require("../assets/plastics.png")} resizeMode="contain" className={activityImageStyle}/>
           </TouchableOpacity>
