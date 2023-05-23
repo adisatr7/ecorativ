@@ -20,8 +20,8 @@ export default function Register({ navigation }: RegisterProps) {
   const [isRememberMe, setIsRememberMe] = useState(false)
 
   return (
-    <View className={`w-full h-full items-center bg-white mt-[${statusBarHeight}px]`}>
-      <StatusBar backgroundColor="black" translucent={true} />
+    <View className={`w-full h-full items-center bg-white`}>
+      <StatusBar backgroundColor="black" translucent/>
       <KeyboardAwareScrollView>
 
         {/* Header Illustration */}

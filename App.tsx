@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack"
 import Main from "./screens/Main"
 import Login from "./screens/Login";
 import Register from "./screens/Register";
+import Cam from "./screens/Cam";
 
 
 const Stack = createStackNavigator()
@@ -14,6 +15,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name="Main" component={Main}/>
+        <Stack.Screen name="Camera" component={Cam}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

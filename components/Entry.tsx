@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { View, Text, TextInput, TouchableOpacity } from "react-native"
+import { View, Text, TextInput, TouchableOpacity, Image } from "react-native"
 
 
 type EntryProps = {
@@ -28,8 +28,8 @@ export default function Entry({ label, placeholder, type="default", isPassword=f
 
         {/* Show password button */}
         { !isPassword? null : (
-          <TouchableOpacity className="w-auto items-center justify-center" onPress={() => setIsHidden(!isHidden)}>
-            <Text className="text-body text-gray-400">Show</Text>
+          <TouchableOpacity activeOpacity={0.7} className="w-auto items-center justify-center" onPress={() => setIsHidden(!isHidden)}>
+            <Image source={isHidden? require("../assets/icon-eye-close.png") : require("../assets/icon-eye-open.png")}/>
           </TouchableOpacity>
         )}
 

@@ -82,7 +82,7 @@ export default function Main() {
                 <Image source={require("../assets/icon-post.png")} className={iconStyle}/> :
                 <Image source={require("../assets/icon-post-inactive.png")} className={iconStyle}/> }
               
-              <Text className={textStyle} >Posts</Text>
+              <Text className={textStyle} >Feed</Text>
             </View>
           )
         }
