@@ -1,13 +1,10 @@
 import { useState } from "react"
 import { View, Text, SafeAreaView, StatusBar, ScrollView, Image, TouchableOpacity } from "react-native"
 import ProfileButton from "../components/ProfileButton"
+import { user } from "../data"
 
 
 export default function Profile({ navigation }: any) {
-  const [profilePicture, setProfilePicture] = useState(require("../assets/mockup-profile-picture.png"))
-  const [userName, setUserName] = useState("Andreas")
-  const [userExp, setUserExp] = useState(50)
-  const [userLevel, setUserLevel] = useState(3)
 
   return (
     <SafeAreaView className="bg-white w-screen h-screen">
@@ -20,7 +17,7 @@ export default function Profile({ navigation }: any) {
 
           {/* Profile Picture */}
           <View  className="mt-[24px]">
-            <Image source={profilePicture} className="rounded-full w-[130px] h-[130px] bg-gray-300"/>
+            <Image source={{ uri: user.profilePictureUri }} className="rounded-full w-[130px] h-[130px] bg-gray-300"/>
             <TouchableOpacity 
               activeOpacity={0.8} 
               onPress={() => navigation.navigate("Profile")}
@@ -35,15 +32,16 @@ export default function Profile({ navigation }: any) {
           </View>
 
           {/* Name label */}
-          <Text className="font-bold text-subheading text-white mt-[16px]">{userName}</Text>
+          <Text numberOfLines={1} className="font-bold text-subheading text-white mt-[16px]">{user.userName}</Text>
 
           {/* Level bar */}
           <View className="mt-[18px]">
             <View className="bg-white rounded-full w-[200px] h-[10px]">
-              <View className={`bg-[#604465] rounded-full h-full w-[${userExp}%]`}/>
+              <View className={`bg-[#604465] rounded-full h-full`} style={{ width: `${user.userExp}%` }}/>
+              <Text>{user.userExp}</Text>
             </View>
             <View className="flex-row justify-between mt-[3px]">
-              <Text className="font-bold text-caption text-white">Level {userLevel}</Text>
+              <Text className="font-bold text-caption text-white">Level {user.userLevel}</Text>
               <Text className="text-right text-caption text-white">Environmentalist</Text>
             </View>
           </View>
@@ -56,11 +54,11 @@ export default function Profile({ navigation }: any) {
           {/* Poin(?) */}
           <View className="bg-white p-[20px] -m-[32px] rounded-md">
             <View className="bg-[#604465] rounded-md w-[200px] h-[40px] justify-center items-center">
-              <Text className="text-white text-body font-bold">Poin: 200</Text>
+              <Text className="text-white text-body font-bold">Poin: {user.points}</Text>
             </View>
             <View className="flex-row w-[200px]">
               <Text className="text-caption text-gray-400 text-center mt-[10px]">
-                Level up to reach the position of <Text className="text-caption text-black">Master of Nature</Text>
+                Level up to reach the position of <Text className="text-caption font-bold text-black">Master of Nature</Text>
               </Text>
             </View>
           </View>

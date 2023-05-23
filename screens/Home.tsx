@@ -1,21 +1,9 @@
-import { useFocusEffect } from "@react-navigation/native"
-import { useCallback, useState } from "react"
 import { View, Text, SafeAreaView, Image, TouchableOpacity, StatusBar, ScrollView, FlatList } from "react-native"
-import { posts } from "../data"
+import { posts, user } from "../data"
 import Post from "../components/Post"
 
 
 export default function Home({ navigation }: any) {
-  const [profilePicture, setProfilePicture] = useState(require("../assets/mockup-profile-picture.png"))
-  const [userName, setUserName] = useState("Andreas")
-  const [userAddress, setUserAddress] = useState("Purwokerto Selatan")
-  
-  // Fetch user data
-  // useFocusEffect(() => {
-  //   useCallback(() => {
-  //     //TODO: Implement?
-  //   }, [])
-  // })
 
   return (
     <SafeAreaView className="bg-white w-screen h-fit">
@@ -28,7 +16,7 @@ export default function Home({ navigation }: any) {
 
           {/* Profile picture */}
           <TouchableOpacity activeOpacity={0.8} className="justify-center" onPress={() => navigation.navigate("Profile")}>
-            <Image source={profilePicture} className="rounded-full w-[60px] h-[60px] bg-gray-300 mr-[14px]"/>
+            <Image source={{ uri: user.profilePictureUri }} className="rounded-full w-[60px] h-[60px] bg-gray-300 mr-[12px]"/>
           </TouchableOpacity>
 
           {/* User name and user address container */}
@@ -37,11 +25,11 @@ export default function Home({ navigation }: any) {
             {/* User greetings */}
             <View className="flex-row">
               <Text className="font-bold text-subheading mb-[2px]">Welcome, </Text>
-              <Text className="font-bold text-subheading text-primary">{userName}</Text>
+              <Text className="font-bold text-subheading text-primary flex-1 mr-[12px]" numberOfLines={1}>{user.userName}</Text>
             </View>
 
             {/* User address */}
-            <Text className="text-body text-gray-400">{userAddress}</Text>
+            <Text className="text-body text-gray-400">{user.userAddress}</Text>
           </View>
 
           {/* Bell icon */}
