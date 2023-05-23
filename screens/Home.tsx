@@ -1,8 +1,8 @@
 import { useFocusEffect } from "@react-navigation/native"
 import { useCallback, useState } from "react"
 import { View, Text, SafeAreaView, Image, TouchableOpacity, StatusBar, ScrollView, FlatList } from "react-native"
+import { posts } from "../data"
 import Post from "../components/Post"
-import posts from "../data"
 
 
 export default function Home({ navigation }: any) {

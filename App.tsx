@@ -4,6 +4,7 @@ import Main from "./screens/Main"
 import Login from "./screens/Login";
 import Register from "./screens/Register";
 import Cam from "./screens/Cam";
+import RecyclingTips from "./screens/RecyclingTips";
 
 
 const Stack = createStackNavigator()
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="Camera" component={Cam}/>
+        <Stack.Screen name="Tips" component={RecyclingTips}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

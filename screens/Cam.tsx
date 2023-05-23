@@ -81,7 +81,10 @@ export default function Cam({ navigation }: any) {
                 <Text className="text-caption mb-[5px] mr-[8px] text-gray-400">Includes types of waste that can be recycled</Text>
 
                 {/* Learn more */}
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                  setShowModal(0)
+                  navigation.replace("Tips")
+                }}>
                   <Text className="text-primary text-caption font-bold">Learn more</Text>
                 </TouchableOpacity>
               </View>
@@ -113,7 +116,10 @@ export default function Cam({ navigation }: any) {
                 <Text className="text-caption mb-[5px] mr-[8px] text-gray-400">Includes types of waste that can be recycled</Text>
                 
                 {/* Learn more */}
-                <TouchableOpacity>
+                <TouchableOpacity activeOpacity={1.0} onPress={() => {
+                  setShowModal(0)
+                  // navigation.replace("Tips")
+                }}>
                   <Text className="text-primary text-caption font-bold">Learn more</Text>
                 </TouchableOpacity>
               </View>

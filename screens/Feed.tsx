@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, StatusBar, ScrollView, TouchableOpacity, Image } from "react-native"
-import posts from "../data"
+import { posts } from "../data"
 import Post from "../components/Post"
 
 
