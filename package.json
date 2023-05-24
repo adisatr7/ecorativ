@@ -10,14 +10,13 @@
   },
   "dependencies": {
     "@expo/config-plugins": "~6.0.0",
-    "@react-native-community/masked-view": "^0.1.11",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
     "expo": "~48.0.15",
     "expo-camera": "~13.2.1",
-    "expo-dev-client": "~2.2.1",
+    "expo-image-picker": "~14.1.1",
     "expo-status-bar": "~1.4.4",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
@@ -28,8 +27,7 @@
     "react-native-reanimated": "~2.14.4",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
-    "undefined": "react-native/Libraries/Image/ImageResizeMode",
-    "expo-image-picker": "~14.1.1"
+    "undefined": "react-native/Libraries/Image/ImageResizeMode"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
